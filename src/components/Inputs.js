@@ -3,7 +3,7 @@ import { UilSearch, UilLocationPoint } from '@iconscout/react-unicons'
 import { useState } from "react";
 
 
-export const Inputs = ({setQuery, units, setUnits}) => {
+export const Inputs = ({setQuery}) => {
   const [city, setCity] = useState('')
 
   const handleSearchClick = () => {
@@ -15,7 +15,9 @@ export const Inputs = ({setQuery, units, setUnits}) => {
   const handleLocationClick = () => {
     // if you have permission to access user location
     if(navigator.geolocation) {
+
       navigator.geolocation.getCurrentPosition(position => {
+
         let lat = position.coords.latitude
         let lon = position.coords.longitude
 
@@ -44,12 +46,6 @@ export const Inputs = ({setQuery, units, setUnits}) => {
         className="text-white cursor-pointer transition ease-out hover:scale-125"
         onClick={handleLocationClick}
         />
-      </div>
-
-      <div className="flex flex-row w-1/4 items-center justify-end">
-        <button name="metric" className="text-xl text-white font-light transition ease-out hover:scale-125">°C</button>
-        <p className="text-xl text-white mx-2">|</p>
-        <button name="imperial" className="text-xl text-white font-light transition ease-out hover:scale-125">°F</button> 
       </div>
     </div>
   )
