@@ -1,4 +1,4 @@
-# React-Weather-App
+# React Weather App
 
 ## Link to Deployed Application
 https://ishan-wijesingha99.github.io/React-Weather-App/
